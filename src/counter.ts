@@ -1,5 +1,7 @@
 export class Counter {
-  constructor(dom) {
+  time: number;
+  dom: HTMLElement;
+  constructor(dom: HTMLElement) {
     this.time = 0;
     this.dom = dom;
     setInterval(() => {
@@ -7,7 +9,7 @@ export class Counter {
     }, 1000);
   }
 
-  update() {
+  private update() {
     this.time += 1;
     this.dom.innerText = `${this.time} seconds have passed`;
   }
